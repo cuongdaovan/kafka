@@ -1,0 +1,18 @@
+version: "3"
+services:
+  kafka:
+    container_name: kafka
+    hostname: kafka
+    image: spotify/kafka
+    ports:
+      - "2181:2181"
+      - "9092:9092"
+    environment:
+      ADVERTISED_HOST: 127.0.0.1
+      ADVERTISED_PORT: 9092
+      NUM_PARTITIONS: 2
+    logging: 
+      driver: none
+    expose: 
+      - 9092
+      - 2181
